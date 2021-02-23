@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let numAttempts = 0;
 
-    //Card Options
+    //Array storing all card Options
     const cardArray = [
         {
             name: 'fries',
@@ -104,7 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         cardsChosen = [];
         cardsChosenId = [];
+        //Display Result
         resultDisplay.textContent = cardsWon.length;
+
+        //Display Attempts
         attemptDisplay.textContent = numAttempts;
         if(cardsWon.length === cardArray.length/2) {
             resultDisplay.textContent = 'Congrats!!! You found all the cards';

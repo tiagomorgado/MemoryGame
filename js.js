@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    let numAttempts = 0;
+
 
     //Array storing all card Options
     const cardArray = [
@@ -55,13 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     cardArray.sort(() => 0.5 - Math.random())
+
     //Select where the grid will be drawn
     const grid = document.querySelector('.grid');
+
+    //Properties
     const resultDisplay = document.querySelector('#result');
     const attemptDisplay = document.querySelector('#attempts');
-    var cardsChosen = [];
-    var cardsChosenId = [];
-    var cardsWon = [];
+    let cardsChosen = [];
+    let cardsChosenId = [];
+    let cardsWon = [];
+    let numAttempts = 0;
 
     //Create Board
     function createBoard() {
@@ -74,17 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //Count number of tries
-    function increaseNoAttempts() {
-       // numAttempts++;
-        document.querySelector('#attempts').innerHTML = numAttempts.toString();
-
-    }
-
 
     //Check for matches
     function checkForMatch() {
-        var cards = document.querySelectorAll('img');
+        let cards = document.querySelectorAll('img');
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
         if(cardsChosen[0] === cardsChosen[1]) {
@@ -97,13 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             cards[optionOneId].setAttribute('src', 'images/pattern.png')
             cards[optionTwoId].setAttribute('src', 'images/pattern.png')
-            increaseNoAttempts();
             alert('Sorry try again');
             numAttempts++;
 
         }
         cardsChosen = [];
         cardsChosenId = [];
+
         //Display Result
         resultDisplay.textContent = cardsWon.length;
 
@@ -116,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Flip your card
     function flipCard() {
-        var cardId = this.getAttribute('data-id');
+        let cardId = this.getAttribute('data-id');
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
         this.setAttribute('src', cardArray[cardId].img)
@@ -125,7 +122,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     createBoard();
-
 })

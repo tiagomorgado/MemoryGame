@@ -1,7 +1,30 @@
+/*Main Body Styles*/
+body{
+    padding-left:37%;
+    display:inline-block;
+}
+
+
+/* Define pointer action on hover*/
+img {
+    cursor: pointer;
+}
+
+
 /*Draw Grid*/
 .grid{
     display: flex;
     flex-wrap: wrap;
     height: 300px;
     width: 400px;
+}
+
+.mainTitle {
+    text-align:center;
+}
+
+
+.UiText{
+    display:inline-block;
+    padding-left:20%;
 }

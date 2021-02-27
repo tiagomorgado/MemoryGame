@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     //Check for matches
     function checkForMatch() {
         let cards = document.querySelectorAll('img');
